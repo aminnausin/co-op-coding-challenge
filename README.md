@@ -5,6 +5,7 @@ Welcome to the WPY Coding Challenge Repository!
 This repository is intended to be a challenge representative of a task that you may encounter on a day to day basis while coding for WPY.  For those of you who may be interviewing or looking at this after an interview, there is no time limit for this challenge.  You can use basic HTML, php, or any languages you're comfortable with. If you'd like to use Laravel, how far into the laravel featureset you want to go is up to you, all this challenge intends to do is lay out a foundation for you to build upon, and set some goals.
 
 Here are some resources to explore:
+
     - https://laravel.com/docs/master
     (if you choose to use Laravel/php you can just create a blade template and include your HTML form)
     - https://www.php.net/manual/en/
