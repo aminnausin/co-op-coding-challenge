@@ -62,11 +62,11 @@
         <main class="flex-shrink-0">      
             <div class="container p-0">
                 <div class="row m-md-1 pt-2 justify-content-center">
-                    <span class="col-lg-5 m-3 p-3 shadow text-md-left panel"> <!-- On the Left (on widescreen) -->
+                    <span class="col-lg-5 m-3 p-3 shadow text-md-left panel">
                         <h3>Your Personal Details</h3>
                         <hr>
     
-                        <p>
+                        <p class="details">
                             Full Name: &ensp; &ensp; <?php echo $fullName ?><br>
                             Email Address: <?php echo $email ?><br>
                             Phone Number: &ensp;<?php echo $phone ?>
@@ -76,7 +76,7 @@
                         <h3>Your Full Address</h3>
                         <hr>
 
-                        <p>
+                        <p class="details">
                             <?php 
                                 echo $streetAddress;
 

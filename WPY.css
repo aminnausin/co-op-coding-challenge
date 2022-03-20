@@ -93,13 +93,15 @@ label{
     font-size: large;
 }
 
-p{
+.details{
     padding-top: 0.3rem;
     padding-bottom: 0.7rem;
     font-family: 'Roboto Mono', monospace;
     font-weight: 400;
     font-size: large;
     line-height: 2em;
+    overflow: auto;
+    white-space: nowrap;
 }
 
 #header {
