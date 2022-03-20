@@ -28,26 +28,36 @@
 }
 
 .validated{
-    box-shadow: 1px 1px 0.2rem 4px #4ecc7f59;
+    box-shadow: none;
     border-color:#2ecc71;
 }
 
 .invalidated{
-    box-shadow: 1 1px 0.2rem 4px #ff000065;
-    background-color: rgb(255, 255, 255);
-    border-color:#2ecc71;
+    box-shadow: none;
+    border-color:#ad2929;
+}
+
+.validated:focus{
+    box-shadow: 0 0 0.4rem 0.3rem #4ecc7f49;
+}
+
+.invalidated:focus{
+    box-shadow: 0 0 0.4rem 0.3rem #ad292949;
+}
+
+input:focus, select:focus{
+    box-shadow: 0 0 0.4rem 0.3rem #49494949;
 }
 
 input, select{
-    border: 0.1rem solid #bbbbbb;
+    border: 0.16rem solid #979797;
     border-radius: 0.5rem;
     padding: 0.3em;
     width: 100%;
+    outline: none;
 }
 
-input[type=text]:focus {
-    border: 0.2rem solid #d4d4d4;
-}
+
 
 body {
     background-color: #faf5f5;

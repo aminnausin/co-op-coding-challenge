@@ -16,14 +16,16 @@
         <link rel="stylesheet" type="text/css" href="WPY.css">
 
         <script>
-            function validateField(ename){
-                let field = document.forms["submission"][ename];
+            function validateField(eName){
+                let field = document.forms["submission"][eName];
 
                 if(field.value === '' || !field.checkValidity()){
-                    field.classList.add('invalidated').classList.remove('validated');
+                    field.classList.add('invalidated');
+                    field.classList.remove('validated');
                 } 
                 else {
-                    field.classList.add('validated').classList.remove('invalidated');
+                    field.classList.add('validated');
+                    field.classList.remove('invalidated');
                 }
             }
         </script>
