@@ -4,7 +4,7 @@
         <!-- Meta Tags -->
         <meta charset="utf-8">
         <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-        <title>WYP - Personal Information Sheet</title>
+        <title>WPY - Personal Information Sheet</title>
 
         <!-- Imported CSS/JS -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,14 +13,14 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto+Condensed&family=Roboto+Mono:wght@400;500&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="wyp.css">
+        <link rel="stylesheet" type="text/css" href="WPY.css">
     </head>
 
     <body class="d-flex flex-column h-100">
         <header>
             <h1 id="header" class="col-12 is-vcentered">
-                <font color="#e21d1d">Signup</font>
-                <font color="#0b0b0c">Form &ensp;</font>
+                <span style="color: #e21d1d;">Signup</span>
+                <span style="color: #0b0b0c;">Form &ensp;</span>
             </h1>
         </header>
 
@@ -29,22 +29,25 @@
                 <form class="row m-md-1 pt-2 justify-content-center" action="submission.php">
                     
                     <span class="col-lg-5 m-3 p-3 shadow text-md-left panel"> <!-- On the Left (on widescreen) -->
-                        <h3>Account Details</h3>
+                        <h3>Personal Details</h3>
                         <hr>
 
                         <section>
-                            <h5>First Name*</h5>
-                            <input type="text" name="name_first" maxlength="255" placeholder="Please enter your First Name" required>
+                            <Label for="name_first">First Name*</Label>
+                            <input name="name_first" id="name_first" maxlength="255" placeholder="Please enter your First Name" required>
                         </section>
     
                         <section>
-                            <h5>Last Name*</h5>
-                            <input type="text" name="name_Last" maxlength="255" placeholder="Please enter your Last Name" size="49" required>
+                            <Label for="name_last">Last Name*</Label>
+                            <input name="name_last" id="name_last" maxlength="255" placeholder="Please enter your Last Name" required>
                         </section>
 
                         <section>
-                            <h5>Phone Number*</h5>
-                            <input type="tel" name="phone" maxlength="10" placeholder="Please enter your Phone Number" size="49" required> 
+                            <Label for="phone">
+                                <span>Phone Number*</span>
+                                <span style="color: #9e9e9e; font-size: small;"> (format: 123-456-7890)</span>
+                            </Label>
+                            <input type="tel" name="phone" id="phone" maxlength="12" placeholder="Please enter your Phone Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}|[0-9]{3}[0-9]{3}[0-9]{4}" required> 
                         </section>
 
                         <br>
@@ -52,13 +55,16 @@
                         <hr>
 
                         <section>
-                            <h5>Email*</h5>
-                            <input type="email" name="email" placeholder="Please enter your Email" size="49" required>
+                            <Label for="email">
+                                <span>Email*</span>
+                                <span style="color: #9e9e9e; font-size: small;"> (format: your-name@domain.com)</span>
+                            </Label>
+                            <input type="email" name="email" id="email" placeholder="Please enter your Email" required>
                         </section>
     
                         <section>
-                            <h5>Password*</h5>
-                            <input type="password" name="password" placeholder="Please enter your Password" size="49" required>
+                            <Label for="password">Password*</Label>
+                            <input type="password" name="password" id="password" placeholder="Please enter your Password" required>
                         </section>
     
                         
@@ -69,22 +75,22 @@
                         <hr>
 
                         <section>
-                            <h5>Street Address*</h5>
-                            <input type="email" name="email" placeholder="Please enter your Street Address" size="49" required>
+                            <Label for="address">Street Address*</Label>
+                            <input name="address" id="address" maxlength="255" placeholder="Please enter your Street Address" required>
                         </section>
     
                         <section>
-                            <h5>Apartment Number</h5>
-                            <input type="email" name="email" placeholder="Please enter your Apartment Number (Optional)" size="49">
+                            <Label for="apt">Apartment Number</Label>
+                            <input name="apt" id="apt" maxlength="255" placeholder="Please enter your Apartment Number (Optional)" >
                         </section>
 
                         <section>
-                            <h5>City*</h5>
-                            <input type="email" name="email" placeholder="Please enter your City" size="49" required>
+                            <Label for="city">City*</Label>
+                            <input name="city" id="city" maxlength="255" placeholder="Please enter your City" required>
                         </section>
 
                         <section>
-                            <h5>Province*</h5>
+                            <Label for="province" >Province*</Label>
                             <select name="province" id="province" required>
                                 <optgroup label="Provinces">
                                     <option value="Alberta">Alberta</option>
@@ -100,14 +106,15 @@
                                     <option value="Quebec">Quebec</option>
                                     <option value="Saskatchewan">Saskatchewan</option>
                                     <option value="Yukon">Yukon</option>
+                                    <option value="USA">American State</option>
                                 </optgroup> 
                             </select>
                         </section>
 
                         <section>
-                            <h5>Country*</h5>
-                            <select name="province" id="country" required>
-                                <optgroup label="Provinces">
+                            <Label for="country">Country*</Label>
+                            <select name="country" id="country" required>
+                                <optgroup label="Country">
                                     <option value="Canada">Canada</option>
                                     <option value="United States">United States</option>
                                 </optgroup> 
@@ -125,9 +132,9 @@
             </div>
         </main>
 
-        <footer class="footer bg-light">
+        <footer class="footer text-center" >
             <p id="footer">
-                This is a website created with bootstrap and PHP. <br>It serves as my submission for the WhoYouPlus Co-op Challenge.
+                This is a website created with bootstrap and PHP. <br>It serves as my submission for the WhoPlusYou Co-op Challenge.
                 <br><br>
                 ©2022 Aminnausin 
             </p>
