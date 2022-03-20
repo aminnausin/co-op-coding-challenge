@@ -1,7 +1,7 @@
 [class*="col-"] {float:left; padding:15px;}
 
 *{
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .b:hover{

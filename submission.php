@@ -29,7 +29,7 @@
             $streetAddress = ucwords(strtolower($streetAddress));
             $loc = ucwords(strtolower($loc));
 
-            /* SQL EXAMPLE NOT IMPLEMENTED
+            /* SQL EXAMPLE NOT IMPLEMENTED -> Assuming the database has been created with correct parameters
 
             //Connection Info
             $hostname = "SQL-Domain";
@@ -44,7 +44,7 @@
             if($connect) { print("Connection Established Successfully"); }
             else { print("Connection Failed "); }  
 
-            $sql = "SELECT * FROM Photographs WHERE pic_location LIKE '%$searchloc%' AND date_taken LIKE '%$searchdt%'";
+            $sql = "INSERT INTO FROM Userbase WHERE pic_location LIKE '%$searchloc%' AND date_taken LIKE '%$searchdt%'";
             $result = mysqli_query($connect, $sql);
             */
 
