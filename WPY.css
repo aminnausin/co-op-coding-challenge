@@ -1,5 +1,9 @@
 [class*="col-"] {float:left; padding:15px;}
 
+*{
+    overflow: hidden;
+}
+
 .b:hover{
     transition-duration: 0.3s;
     background-color: #2b2b2b;
@@ -16,6 +20,10 @@
     font-size: large;
     width: auto;
     cursor: pointer;
+}
+
+.p{
+    
 }
 
 .panel {
@@ -87,6 +95,15 @@ label{
     font-family: 'Roboto Mono', monospace;
     font-weight: 400;
     font-size: large;
+}
+
+p{
+    padding-top: 0.3rem;
+    padding-bottom: 0.7rem;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    font-size: large;
+    line-height: 2em;
 }
 
 #header {

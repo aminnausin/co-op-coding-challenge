@@ -13,30 +13,49 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto+Condensed&family=Roboto+Mono:wght@400;500&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="wpy.css">
+        <link rel="stylesheet" type="text/css" href="WPY.css">
 
         <?php
             $fullName = $_POST['name_first'] . ' ' . $_POST['name_last'];
             $streetAddress = $_POST['address'];
             $apt = $_POST['apt'];
-            $loc = $_POST['city'] . ', ' . $_POST['province'] . ', ' . $_POST['country'];
+            $loc = $_POST['city'] . ', ' . $_POST['province'];
+            $country = $_POST['country'];
 
             $email = $_POST['email'];
             $phone = $_POST['phone'];
 
-            if ($apt != '') {
-                $streetAddress = $streetAddress . '<br>' . $apt;
-            }
+            $fullName = ucwords(strtolower($fullName));
+            $streetAddress = ucwords(strtolower($streetAddress));
+            $loc = ucwords(strtolower($loc));
 
-            $streetAddress = $streetAddress . '<br>' . $loc
+            /* SQL EXAMPLE NOT IMPLEMENTED
+
+            //Connection Info
+            $hostname = "SQL-Domain";
+            $username = "sqlUserName";
+            $password = "sqlPassword";
+            $database = "databaseName";
+
+            //Connection
+            $connect = mysqli_connect($servername, $username, $password, $database);
+
+            //Error Checking
+            if($connect) { print("Connection Established Successfully"); }
+            else { print("Connection Failed "); }  
+
+            $sql = "SELECT * FROM Photographs WHERE pic_location LIKE '%$searchloc%' AND date_taken LIKE '%$searchdt%'";
+            $result = mysqli_query($connect, $sql);
+            */
+
         ?>
     </head>
 
     <body class="d-flex flex-column h-100">
         <header>
             <h1 id="header" class="col-12 is-vcentered">
-                <span style="color: #e21d1d;">Signup</span>
-                <span style="color: #0b0b0c;">Details &ensp;</span>
+                <span style="color: #e21d1d;">&ensp;&ensp;&ensp;Signup</span>
+                <span style="color: #0b0b0c;">Successful</span>
             </h1>
         </header>
 
@@ -47,27 +66,27 @@
                         <h3>Your Personal Details</h3>
                         <hr>
     
-                        <section>
-                            <Label>Name: <?php echo $fullName ?> </Label>
-                        </section>
-    
-                        <section>
-                            <Label>Email: <?php echo $email ?> </Label>
-                            <Label>Phone Number: <?php echo $phone ?> </Label>
-                        </section>
-    
-                        <section>
-                            <span>Phone Number*</span>
-                            <span style="color: #9e9e9e; font-size: small;"> (format: 123-456-7890)</span>
-                        </section>
+                        <p>
+                            Full Name: &ensp; &ensp; <?php echo $fullName ?><br>
+                            Email Address: <?php echo $email ?><br>
+                            Phone Number: &ensp;<?php echo $phone ?>
+                        </p>
     
                         <br>
                         <h3>Your Full Address</h3>
                         <hr>
 
-                        <section>
-                            <Label>Street address: <?php echo $streetAddress ?> </Label>
-                        </section>    
+                        <p>
+                            <?php 
+                                echo $streetAddress;
+
+                                if ($apt != '') {
+                                    echo "<br>" . $apt;     
+                                }
+
+                                echo "<br>" . $loc . "<br>" . $country;
+                            ?>
+                        </p>
                     </span>
     
                     <span class="row m-0">
