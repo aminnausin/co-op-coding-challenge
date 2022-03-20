@@ -27,6 +27,17 @@
     color: #38383a;
 }
 
+.validated{
+    box-shadow: 1px 1px 0.2rem 4px #4ecc7f59;
+    border-color:#2ecc71;
+}
+
+.invalidated{
+    box-shadow: 1 1px 0.2rem 4px #ff000065;
+    background-color: rgb(255, 255, 255);
+    border-color:#2ecc71;
+}
+
 input, select{
     border: 0.1rem solid #bbbbbb;
     border-radius: 0.5rem;
@@ -36,11 +47,6 @@ input, select{
 
 input[type=text]:focus {
     border: 0.2rem solid #d4d4d4;
-}
-
-input[type=text]:valid {
-    box-shadow: 0 4px 0.2rem 12px #4ecc7f59;
-    background-color: red;
 }
 
 body {
