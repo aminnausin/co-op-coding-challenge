@@ -42,7 +42,7 @@
 
         <main class="flex-shrink-0">           
             <div class="container p-0">
-                <form name="submission" class="row m-md-1 pt-2 justify-content-center" action="submission.php">
+                <form name="submission" class="row m-md-1 pt-2 justify-content-center" action="submission.php" method="post">
                     
                     <span class="col-lg-5 m-3 p-3 shadow text-md-left panel"> <!-- On the Left (on widescreen) -->
                         <h3>Personal Details</h3>
@@ -107,7 +107,7 @@
 
                         <section>
                             <Label for="province" >Province*</Label>
-                            <select name="province" id="province" required>
+                            <select name="province" id="province" class="validated" required>
                                 <optgroup label="Provinces">
                                     <option value="Alberta">Alberta</option>
                                     <option value="British Columbia">British Columbia</option>
@@ -129,7 +129,7 @@
 
                         <section>
                             <Label for="country">Country*</Label>
-                            <select name="country" id="country" required>
+                            <select name="country" id="country" class="validated" required>
                                 <optgroup label="Country">
                                     <option value="Canada">Canada</option>
                                     <option value="United States">United States</option>
