@@ -16,7 +16,7 @@
         <link rel="stylesheet" type="text/css" href="WPY.css">
 
         <script>
-            function validateField(eName){
+            function validateField(eName){ //Checks input field named eName and colours it based on validity
                 let field = document.forms["submission"][eName];
 
                 if(field.value === '' || !field.checkValidity()){
@@ -26,6 +26,24 @@
                 else {
                     field.classList.add('validated');
                     field.classList.remove('invalidated');
+                }
+            }
+
+            function validateFederal(){ //Checks country and province combination and colours selections based on validity
+                let province = document.getElementById('province');
+                let country = document.getElementById('country');
+
+                if(country.value === 'Canada' && province.value === 'USA' || country.value === 'United States' && province.value !== 'USA'){
+                    province.classList.add('invalidated');
+                    country.classList.add('invalidated');
+                    province.classList.remove('validated');
+                    country.classList.remove('validated');
+                }
+                else{
+                    province.classList.remove('invalidated');
+                    country.classList.remove('invalidated');
+                    province.classList.add('validated');
+                    country.classList.add('validated');
                 }
             }
         </script>
@@ -44,7 +62,7 @@
             <div class="container p-0">
                 <form name="submission" class="row m-md-1 mb-md-0 pt-2 justify-content-center" action="submission.php" method="post">
                     
-                    <span class="col-md-5 m-3 p-3 shadow text-md-left panel"> <!-- On the Left (on widescreen) -->
+                    <span class="col-md-5 m-3 p-3 shadow text-md-left panel"> <!-- On the Left (widescreen) -->
                         <h3>Personal Details</h3>
                         <hr>
 
@@ -81,12 +99,10 @@
                         <section>
                             <Label for="password">Password*</Label>
                             <input type="password" name="password" id="password" placeholder="Please enter your Password" required oninput="validateField(name);">
-                        </section>
-    
-                        
+                        </section>                     
                     </span>
     
-                    <span class="col-md-5 m-3 p-3 shadow text-md-left panel"> <!-- On the Right (on widescreen) -->
+                    <span class="col-md-5 m-3 p-3 shadow text-md-left panel"> <!-- On the Right (widescreen) -->
                         <h3>Address Information</h3>
                         <hr>
 
@@ -96,18 +112,21 @@
                         </section>
     
                         <section>
-                            <Label for="apt">Apartment Number</Label>
-                            <input name="apt" id="apt" maxlength="255" placeholder="Please enter your Apartment Number (Optional)" >
+                            <Label for="apt">
+                                <span>Apartment / Suite Number </span>
+                                <span style="color: #9e9e9e; font-size: small;"> (optional)</span>
+                            </Label>
+                            <input name="apt" id="apt" maxlength="255" placeholder="Enter your Apt, Suite, Unit number here" >
                         </section>
 
                         <section>
                             <Label for="city">City*</Label>
-                            <input name="city" id="city" maxlength="255" placeholder="Please enter your City" required oninput="validateField(name);">
+                            <input name="city" id="city" maxlength="255" placeholder="Please enter your City Name" required oninput="validateField(name);">
                         </section>
 
                         <section>
                             <Label for="province" >Province*</Label>
-                            <select name="province" id="province" class="validated" required>
+                            <select name="province" id="province" class="validated" required onchange="validateFederal();">
                                 <optgroup label="Provinces">
                                     <option value="Alberta">Alberta</option>
                                     <option value="British Columbia">British Columbia</option>
@@ -129,7 +148,7 @@
 
                         <section>
                             <Label for="country">Country*</Label>
-                            <select name="country" id="country" class="validated" required>
+                            <select name="country" id="country" class="validated" required onchange="validateFederal();">
                                 <optgroup label="Country">
                                     <option value="Canada">Canada</option>
                                     <option value="United States">United States</option>
@@ -138,17 +157,17 @@
                         </section>
                     </span>
                     
-                    <span class="row m-0">
-                        <article class="col-lg-12 text-center">
+                    <span class="col-md-12 text-center"> <!-- At the bottom -->
+                        <section>
                             <h3 style="margin-bottom: 0%;">Happy with Your Information?</h3>
                             <input type="submit" value="Submit For Review" class="b shadow-lg">
-                        </article>
+                        </section>
                     </span>
                 </form> 
             </div>
         </main>
 
-        <footer class="footer text-center" >
+        <footer class="footer text-center">
             <p id="footer">
                 This is a website created with bootstrap and PHP. <br>It serves as my submission for the WhoPlusYou Co-op Challenge.
                 <br><br>

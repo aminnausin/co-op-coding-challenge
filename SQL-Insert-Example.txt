@@ -1,0 +1,42 @@
+/* SQL EXAMPLE NOT IMPLEMENTED -> Assuming the database has been created with correct parameters
+
+    //POST Data Retrieval
+    $firstName = $_POST['name_first'];
+    $lastName = $_POST['name_last'];
+    $streetAddress = $_POST['address'];
+    $apt = $_POST['apt'];
+    $city = $_POST['city'];
+    $province = $_POST['province'];
+    $country = $_POST['country'];
+
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+
+    //Connection Info
+    $hostname = "sqlDomain";
+    $username = "sqlUserName";
+    $password = "sqlPassword";
+    $database = "databaseName";
+
+    //Connection
+    $connect = mysqli_connect($hostname, $username, $password, $database);
+
+    //Error Checking
+    if($connect) { 
+        print("Connection Established Successfully"); 
+    }
+    else { 
+        print("Connection Failed "); 
+    } 
+
+    //SQL QUERY -> I do not have to define columns as I am inserting into all of them
+    $sql = "INSERT INTO users VALUES ('$firstName', '$lastName', '$email', '$phone', '$streetAddress', '$city', '$province', '$country')";
+
+    //Retrieve result of query
+    $result = mysqli_query($connect, $sql);
+
+    //Do whatever with the $result (error check the addition to the database or display a message -> whatever is required)
+
+    //Close Connection
+    mysqli_close($connect);
+*/

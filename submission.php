@@ -16,7 +16,8 @@
         <link rel="stylesheet" type="text/css" href="WPY.css">
 
         <?php
-            $fullName = $_POST['name_first'] . ' ' . $_POST['name_last'];
+            $firstName = $_POST['name_first'];
+            $lastName = $_POST['name_last'];
             $streetAddress = $_POST['address'];
             $apt = $_POST['apt'];
             $city = $_POST['city'];
@@ -27,7 +28,7 @@
             $phone = $_POST['phone'];
 
             $loc =  $city . ', ' . $province;
-            $fullName = ucwords(strtolower($fullName));
+            $fullName = ucwords(strtolower($firstName . ' ' . $lastName));
             $streetAddress = ucwords(strtolower($streetAddress));
             $loc = ucwords(strtolower($loc));
 
@@ -40,7 +41,7 @@
             $database = "databaseName";
 
             //Connection
-            $connect = mysqli_connect($servername, $username, $password, $database);
+            $connect = mysqli_connect($hostname, $username, $password, $database);
 
             //Error Checking
             if($connect) { 
@@ -56,6 +57,10 @@
             //Retrieve result of query
             $result = mysqli_query($connect, $sql);
 
+            //Do whatever with the $result (error check the addition to the database or display a message -> whatever is required)
+
+            //Close Connection
+            mysqli_close($connect);
             */
         ?>
     </head>
