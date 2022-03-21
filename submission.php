@@ -19,12 +19,14 @@
             $fullName = $_POST['name_first'] . ' ' . $_POST['name_last'];
             $streetAddress = $_POST['address'];
             $apt = $_POST['apt'];
-            $loc = $_POST['city'] . ', ' . $_POST['province'];
+            $city = $_POST['city'];
+            $province = $_POST['province'];
             $country = $_POST['country'];
 
             $email = $_POST['email'];
             $phone = $_POST['phone'];
 
+            $loc =  $city . ', ' . $province;
             $fullName = ucwords(strtolower($fullName));
             $streetAddress = ucwords(strtolower($streetAddress));
             $loc = ucwords(strtolower($loc));
@@ -32,7 +34,7 @@
             /* SQL EXAMPLE NOT IMPLEMENTED -> Assuming the database has been created with correct parameters
 
             //Connection Info
-            $hostname = "SQL-Domain";
+            $hostname = "sqlDomain";
             $username = "sqlUserName";
             $password = "sqlPassword";
             $database = "databaseName";
@@ -41,13 +43,20 @@
             $connect = mysqli_connect($servername, $username, $password, $database);
 
             //Error Checking
-            if($connect) { print("Connection Established Successfully"); }
-            else { print("Connection Failed "); }  
+            if($connect) { 
+                print("Connection Established Successfully"); 
+            }
+            else { 
+                print("Connection Failed "); 
+            } 
 
-            $sql = "INSERT INTO FROM Userbase WHERE pic_location LIKE '%$searchloc%' AND date_taken LIKE '%$searchdt%'";
+            //SQL QUERY -> I do not have to define columns as I am inserting into all of them
+            $sql = "INSERT INTO users VALUES ('$firstName', '$lastName', '$email', '$phone', '$streetAddress', '$city', '$province', '$country')";
+
+            //Retrieve result of query
             $result = mysqli_query($connect, $sql);
-            */
 
+            */
         ?>
     </head>
 
@@ -59,7 +68,7 @@
             </h1>
         </header>
 
-        <main class="flex-shrink-0">      
+        <main class="flex-shrink-0 pb-0">      
             <div class="container p-0">
                 <div class="row m-md-1 pt-2 justify-content-center">
                     <span class="col-lg-5 m-3 p-3 shadow text-md-left panel">
