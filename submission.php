@@ -4,7 +4,7 @@
         <!-- Meta Tags -->
         <meta charset="utf-8">
         <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-        <title>WYP - Submitted Personal Information</title>
+        <title>WPY - Submitted Personal Information</title>
 
         <!-- Imported CSS/JS -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
