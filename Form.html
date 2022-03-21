@@ -38,16 +38,26 @@
                     country.classList.add('invalidated');
                     province.classList.remove('validated');
                     country.classList.remove('validated');
+                    return false;
                 }
                 else{
                     province.classList.remove('invalidated');
                     country.classList.remove('invalidated');
                     province.classList.add('validated');
                     country.classList.add('validated');
+                    return true;
+                }
+            }
+
+            function validateForm(event) //Checks for country province mismatch upon submission
+            {
+                if(!validateFederal())
+                {
+                    alert("Invalid Province and Country combination! Please review your information.");
+                    event.preventDefault();
                 }
             }
         </script>
-
     </head>
 
     <body class="d-flex flex-column h-100">
@@ -60,7 +70,7 @@
 
         <main class="flex-shrink-0 pb-0">           
             <div class="container p-0">
-                <form name="submission" class="row m-md-1 mb-md-0 pt-2 justify-content-center" action="submission.php" method="post">
+                <form name="submission" class="row m-md-1 mb-md-0 pt-2 justify-content-center" action="submission.php" onsubmit="validateForm(event);" method="post">
                     
                     <span class="col-md-5 m-3 p-3 shadow text-md-left panel"> <!-- On the Left (widescreen) -->
                         <h3>Personal Details</h3>
