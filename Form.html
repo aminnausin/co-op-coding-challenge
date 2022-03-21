@@ -33,7 +33,7 @@
                 let province = document.getElementById('province');
                 let country = document.getElementById('country');
 
-                if(country.value === 'Canada' && province.value === 'USA' || country.value === 'United States' && province.value !== 'USA'){
+                if(country.value === 'Canada' && province.value === 'American State' || country.value === 'United States' && province.value !== 'American State'){
                     province.classList.add('invalidated');
                     country.classList.add('invalidated');
                     province.classList.remove('validated');
@@ -141,7 +141,7 @@
                                     <option value="Quebec">Quebec</option>
                                     <option value="Saskatchewan">Saskatchewan</option>
                                     <option value="Yukon">Yukon</option>
-                                    <option value="USA">American State</option>
+                                    <option value="American State">American State</option>
                                 </optgroup> 
                             </select>
                         </section>
